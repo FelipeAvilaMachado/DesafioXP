@@ -1,0 +1,43 @@
+﻿<Window x:Class="XP.Desafio.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:ui="http://schemas.modernwpf.com/2019"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        ui:WindowHelper.UseModernWindowStyle="True"
+        mc:Ignorable="d"
+        Background="{StaticResource SCBXPPrimary}"
+        Foreground="{StaticResource SCBXPSecondary}"
+        Title="Desafio XP" 
+        Icon="{StaticResource XPIcon}"
+        WindowStyle="None"
+        Height="450" Width="800">
+
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="Auto" />
+            <ColumnDefinition Width="*" />
+        </Grid.ColumnDefinitions>
+
+        <ui:NavigationView x:Name="RootNavigation"
+                           Margin="0"
+                           IsSettingsVisible="False"
+                           IsBackButtonVisible="Collapsed"
+                           MaxWidth="100"
+                           ItemInvoked="RootNavigation_ItemInvoked" >
+
+            <ui:NavigationView.MenuItems>
+                <ui:NavigationViewItem Content="Home" Tag="home" />
+                <ui:NavigationViewItem Content="Historico" Tag="historico" />
+            </ui:NavigationView.MenuItems>
+            
+            <ui:NavigationView.Resources>
+                <SolidColorBrush x:Key="NavigationViewTopPaneBackground" Color="Transparent"/>
+                <SolidColorBrush x:Key="NavigationViewDefaultPaneBackground" Color="{StaticResource CXPSecondary}"/>
+                <SolidColorBrush x:Key="NavigationViewExpandedPaneBackground" Color="Transparent" />
+            </ui:NavigationView.Resources>
+        </ui:NavigationView>
+        
+        <Frame x:Name="RootFrame" Grid.Column="1" JournalOwnership="OwnsJournal" NavigationUIVisibility="Hidden"/>
+    </Grid>
+</Window>
