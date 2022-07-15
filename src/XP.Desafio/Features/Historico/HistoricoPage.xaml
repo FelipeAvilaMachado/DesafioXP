@@ -4,7 +4,6 @@
       xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
       xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
       xmlns:historico="clr-namespace:XP.Desafio.Features.Historico"
-      xmlns:converters="clr-namespace:XP.Desafio.Converters"
       mc:Ignorable="d" 
       d:DesignHeight="450"
       d:DesignWidth="800"
@@ -19,7 +18,7 @@
         
         <!--Page Header-->
         <DockPanel FlowDirection="LeftToRight" Height="40" Background="{StaticResource SCBXPSecondary}" VerticalAlignment="Top">
-            <TextBlock Text="Historico" FontSize="20" Foreground="{StaticResource SCBXPWhite}" VerticalAlignment="Center" Margin="10,5"/>
+            <TextBlock Text="Histórico" FontSize="20" Foreground="{StaticResource SCBXPWhite}" VerticalAlignment="Center" Margin="10,5"/>
             <Button Content="Run Test" Command="{Binding ToggleTestCommand}" Foreground="{StaticResource SCBXPWhite}" Margin="10,5"/>
         </DockPanel>
         
@@ -46,13 +45,13 @@
             <ListView x:Name="listOrdernsAberto" Grid.Row="1" ItemsSource="{Binding Ordems}" >
                 <ListView.View>
                     <GridView AllowsColumnReorder="False" >
-                        <GridViewColumn Header="DATA E HORA" Width="120" DisplayMemberBinding="{Binding DateTime, StringFormat='dd-MM-yyyy HH:mm:ss'}" />
+                        <GridViewColumn Header="DATA E HORA" Width="160" DisplayMemberBinding="{Binding DateTime, StringFormat='dd/MM/yyyy HH:mm:ss'}" />
                         <GridViewColumn Header="ASSESSOR" Width="120" DisplayMemberBinding="{Binding AssessorName, TargetNullValue='-'}" />
-                        <GridViewColumn Header="CONTA" Width="120" DisplayMemberBinding="{Binding Conta, TargetNullValue='-'}" />
-                        <GridViewColumn Header="ATIVO" Width="120" DisplayMemberBinding="{Binding Ativo, TargetNullValue='-'}" />
-                        <GridViewColumn Header="TIPO" Width="120" DisplayMemberBinding="{Binding Tipo, TargetNullValue='-'}" />
-                        <GridViewColumn Header="QTD" Width="120" DisplayMemberBinding="{Binding Quantidade, TargetNullValue='-'}" />
-                        <GridViewColumn Header="QTD. APARENTE" Width="120" DisplayMemberBinding="{Binding QuantidadeAparente, TargetNullValue='-'}" />
+                        <GridViewColumn Header="CONTA" Width="100" DisplayMemberBinding="{Binding Conta, TargetNullValue='-'}" />
+                        <GridViewColumn Header="ATIVO" Width="100" DisplayMemberBinding="{Binding Ativo, TargetNullValue='-'}" />
+                        <GridViewColumn Header="TIPO" Width="60" DisplayMemberBinding="{Binding Tipo, TargetNullValue='-'}" />
+                        <GridViewColumn Header="QTD" Width="60" DisplayMemberBinding="{Binding Quantidade, TargetNullValue='-'}" />
+                        <GridViewColumn Header="QTD. APARENTE" Width="130" DisplayMemberBinding="{Binding QuantidadeAparente, TargetNullValue='-'}" />
                         <GridViewColumn Header="QTD. DISP" Width="120" DisplayMemberBinding="{Binding QuantidadeDisponivel, TargetNullValue='-'}" />
                         <GridViewColumn Header="QTD. CANCEL" Width="120" DisplayMemberBinding="{Binding QuantidadeCancel, TargetNullValue='-'}" />
                         <GridViewColumn Header="QTD. EXEC" Width="120" DisplayMemberBinding="{Binding QuantidadeExec, TargetNullValue='-'}" />
@@ -67,6 +66,7 @@
                 <ListView.ItemContainerStyle>
                     <Style TargetType="ListViewItem">
                         <Setter Property="Foreground" Value="{Binding TextColor}" />
+                        <Setter Property="FontSize" Value="16" />
                         <Style.Resources>
                             <SolidColorBrush x:Key="{x:Static SystemColors.HighlightBrushKey}" Color="Transparent"/>
                             <SolidColorBrush x:Key="{x:Static SystemColors.HighlightTextBrushKey}" Color="Transparent"/>
