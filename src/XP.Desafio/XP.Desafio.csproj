@@ -12,15 +12,24 @@
 	<Resource Include="Resources\Fonts\Font Awesome 6 Free-Regular-400.otf" />
 	<Resource Include="Resources\Fonts\Font Awesome 6 Free-Solid-900.otf" />
 	<Resource Include="Resources\Images\XPIcon.bmp" />
+	<Resource Include="Resources\Images\logo-inc-new.bmp" />
   </ItemGroup>
 
   <ItemGroup>
-    <PackageReference Include="CommunityToolkit.Mvvm" Version="7.1.2" />
+    <PackageReference Include="CommunityToolkit.Mvvm" Version="8.0.0-preview4" />
     <PackageReference Include="DynamicData" Version="7.9.5" />
     <PackageReference Include="ModernWpfUI" Version="0.9.6" />
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\XP.Desafio.Services\XP.Desafio.Services.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Page Update="Resources\Styles.xaml">
+      <XamlRuntime>$(DefaultXamlRuntime)</XamlRuntime>
+      <SubType>Designer</SubType>
+    </Page>
     <Page Update="Resources\Images.xaml">
       <XamlRuntime>$(DefaultXamlRuntime)</XamlRuntime>
       <SubType>Designer</SubType>

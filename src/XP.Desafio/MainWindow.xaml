@@ -14,12 +14,13 @@
         Height="450" Width="800">
 
     <Grid>
-        <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="Auto" />
-            <ColumnDefinition Width="*" />
-        </Grid.ColumnDefinitions>
-
+        <Frame Background="{StaticResource SCBXPSecondary}"
+               Width="40"
+               HorizontalAlignment="Left"/>
+        <Frame x:Name="RootFrame" Margin="40,0,0,0" JournalOwnership="OwnsJournal" NavigationUIVisibility="Hidden"/>
+        
         <ui:NavigationView x:Name="RootNavigation"
+                           HorizontalAlignment="Left"
                            Margin="0"
                            IsSettingsVisible="False"
                            IsBackButtonVisible="Collapsed"
@@ -30,14 +31,12 @@
                 <ui:NavigationViewItem Content="Home" Tag="home" />
                 <ui:NavigationViewItem Content="Historico" Tag="historico" />
             </ui:NavigationView.MenuItems>
-            
+
             <ui:NavigationView.Resources>
-                <SolidColorBrush x:Key="NavigationViewTopPaneBackground" Color="Transparent"/>
+                <SolidColorBrush x:Key="NavigationViewTopPaneBackground" Color="{StaticResource CXPSecondary}"/>
                 <SolidColorBrush x:Key="NavigationViewDefaultPaneBackground" Color="{StaticResource CXPSecondary}"/>
-                <SolidColorBrush x:Key="NavigationViewExpandedPaneBackground" Color="Transparent" />
+                <SolidColorBrush x:Key="NavigationViewExpandedPaneBackground" Color="{StaticResource CXPSecondary}" />
             </ui:NavigationView.Resources>
         </ui:NavigationView>
-        
-        <Frame x:Name="RootFrame" Grid.Column="1" JournalOwnership="OwnsJournal" NavigationUIVisibility="Hidden"/>
     </Grid>
 </Window>

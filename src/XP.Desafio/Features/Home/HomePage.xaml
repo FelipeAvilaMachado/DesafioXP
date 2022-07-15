@@ -8,6 +8,23 @@
       Title="HomePage">
 
     <Grid>
-        <TextBlock Text="Teste" Foreground="{StaticResource SCBXPWhite}"/>
+        <Image Source="{StaticResource XPInc}"
+               Stretch="UniformToFill"
+               VerticalAlignment="Center"
+               HorizontalAlignment="Center"/>
+        
+        <TextBlock Text="Desafio XP Inc"
+                   FontSize="40"
+                   Margin="40"
+                   HorizontalAlignment="Center"
+                   VerticalAlignment="Top"
+                   Foreground="{StaticResource SCBXPWhite}"/>
+        
+        <TextBlock Text="Felipe Machado"
+                   FontSize="40"
+                   Margin="40"
+                   HorizontalAlignment="Center"
+                   VerticalAlignment="Bottom"
+                   Foreground="{StaticResource SCBXPWhite}"/>
     </Grid>
 </Page>

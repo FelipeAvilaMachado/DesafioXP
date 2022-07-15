@@ -2,7 +2,8 @@
     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
     
-    <!--Images-->
-    <ImageSource x:Key="XPIcon">Images/XPIcon.bmp</ImageSource>
-    <ImageSource x:Key="XPInc">Images/logo-inc-new.bmp</ImageSource>
+    <!--Default Styles-->
+    <Style TargetType="ListViewItem">
+        <Setter Property="HorizontalContentAlignment" Value="Center"/>
+    </Style>
 </ResourceDictionary>

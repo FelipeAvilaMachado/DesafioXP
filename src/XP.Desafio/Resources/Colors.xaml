@@ -9,6 +9,7 @@
     <SolidColorBrush x:Key="SCBXPLightGrey">#7c8494</SolidColorBrush>
     <SolidColorBrush x:Key="SCBXPYellow">#FFF80A</SolidColorBrush>
     <SolidColorBrush x:Key="SCBXPRed">#EB1D36</SolidColorBrush>
+    <SolidColorBrush x:Key="SCBXPBlue">#3AB4F2</SolidColorBrush>
     <SolidColorBrush x:Key="SCBXPGreen">#3EC70B</SolidColorBrush>
 
     <!--Colors-->
@@ -18,5 +19,6 @@
     <Color x:Key="CXPLightGrey">#7c8494</Color>
     <Color x:Key="CXPYellow">#FFF80A</Color>
     <Color x:Key="CXPRed">#EB1D36</Color>
+    <Color x:Key="CXPBlue">#3AB4F2</Color>
     <Color x:Key="CXPGreen">#3EC70B</Color>
 </ResourceDictionary>

@@ -3,10 +3,87 @@
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
       xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
       xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+      xmlns:historico="clr-namespace:XP.Desafio.Features.Historico"
+      xmlns:converters="clr-namespace:XP.Desafio.Converters"
       mc:Ignorable="d" 
-      d:DesignHeight="450" d:DesignWidth="800"
+      d:DesignHeight="450"
+      d:DesignWidth="800"
+      d:DataContext="{d:DesignInstance historico:HistoricoViewModel, IsDesignTimeCreatable=True}"
       Title="HistoricoPage">
-    <DockPanel FlowDirection="LeftToRight" Height="30" Background="{StaticResource SCBXPSecondary}" VerticalAlignment="Top">
-        <TextBlock Text="Historico" Foreground="{StaticResource SCBXPWhite}" VerticalAlignment="Center" Margin="20,0"/>
-    </DockPanel>
+    
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="40"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        
+        <!--Page Header-->
+        <DockPanel FlowDirection="LeftToRight" Height="40" Background="{StaticResource SCBXPSecondary}" VerticalAlignment="Top">
+            <TextBlock Text="Historico" FontSize="20" Foreground="{StaticResource SCBXPWhite}" VerticalAlignment="Center" Margin="10,5"/>
+            <Button Content="Run Test" Command="{Binding ToggleTestCommand}" Foreground="{StaticResource SCBXPWhite}" Margin="10,5"/>
+        </DockPanel>
+        
+        <!--Content-->
+        <Grid Grid.Row="1" >
+            <Grid.RowDefinitions>
+                <RowDefinition Height="40"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+            <!--Grouping-->
+            <ToggleButton HorizontalAlignment="Stretch"
+                          HorizontalContentAlignment="Left"
+                          VerticalAlignment="Top"
+                          Height="40"
+                          Click="ToggleButton_Click"
+                          Foreground="{StaticResource SCBXPWhite}"
+                          Background="{StaticResource SCBXPSecondary}">
+                <DockPanel>
+                    <TextBlock x:Name="textBlockOrdemAbertoToggleIcon" FontFamily="{StaticResource FontAwesomeSolid}" Text="&#xf106;" VerticalAlignment="Center"/>
+                    <TextBlock Text="ORDENS EM ABERTO" FontSize="20" Foreground="{StaticResource SCBXPWhite}" VerticalAlignment="Center" Margin="10,5"/>
+                </DockPanel>
+            </ToggleButton>
+            <!--List-->
+            <ListView x:Name="listOrdernsAberto" Grid.Row="1" ItemsSource="{Binding Ordems}" >
+                <ListView.View>
+                    <GridView AllowsColumnReorder="False" >
+                        <GridViewColumn Header="DATA E HORA" Width="120" DisplayMemberBinding="{Binding DateTime, StringFormat='dd-MM-yyyy HH:mm:ss'}" />
+                        <GridViewColumn Header="ASSESSOR" Width="120" DisplayMemberBinding="{Binding AssessorName, TargetNullValue='-'}" />
+                        <GridViewColumn Header="CONTA" Width="120" DisplayMemberBinding="{Binding Conta, TargetNullValue='-'}" />
+                        <GridViewColumn Header="ATIVO" Width="120" DisplayMemberBinding="{Binding Ativo, TargetNullValue='-'}" />
+                        <GridViewColumn Header="TIPO" Width="120" DisplayMemberBinding="{Binding Tipo, TargetNullValue='-'}" />
+                        <GridViewColumn Header="QTD" Width="120" DisplayMemberBinding="{Binding Quantidade, TargetNullValue='-'}" />
+                        <GridViewColumn Header="QTD. APARENTE" Width="120" DisplayMemberBinding="{Binding QuantidadeAparente, TargetNullValue='-'}" />
+                        <GridViewColumn Header="QTD. DISP" Width="120" DisplayMemberBinding="{Binding QuantidadeDisponivel, TargetNullValue='-'}" />
+                        <GridViewColumn Header="QTD. CANCEL" Width="120" DisplayMemberBinding="{Binding QuantidadeCancel, TargetNullValue='-'}" />
+                        <GridViewColumn Header="QTD. EXEC" Width="120" DisplayMemberBinding="{Binding QuantidadeExec, TargetNullValue='-'}" />
+                        <GridViewColumn Header="VALOR" Width="120" DisplayMemberBinding="{Binding Valor, TargetNullValue='-', StringFormat='N2'}" />
+                        <GridViewColumn Header="VALOR DISP" Width="120" DisplayMemberBinding="{Binding ValorDisponivel, TargetNullValue='-', StringFormat='N2'}" />
+                        <GridViewColumn Header="OBJETIVO" Width="120" DisplayMemberBinding="{Binding Objetivo, TargetNullValue='-', StringFormat='N2'}" />
+                        <GridViewColumn Header="OBJ. DISP" Width="120" DisplayMemberBinding="{Binding ObjetivoDisponivel, TargetNullValue='-', StringFormat='N2'}" />
+                        <GridViewColumn Header="REDUCAO" Width="120" DisplayMemberBinding="{Binding Reducao, TargetNullValue='-', StringFormat='N2'}" />
+                    </GridView>
+                </ListView.View>
+
+                <ListView.ItemContainerStyle>
+                    <Style TargetType="ListViewItem">
+                        <Setter Property="Foreground" Value="{Binding TextColor}" />
+                        <Style.Resources>
+                            <SolidColorBrush x:Key="{x:Static SystemColors.HighlightBrushKey}" Color="Transparent"/>
+                            <SolidColorBrush x:Key="{x:Static SystemColors.HighlightTextBrushKey}" Color="Transparent"/>
+                        </Style.Resources>
+                        <Style.Triggers>
+                            <Trigger Property="IsSelected" Value="True">
+                                <Setter Property="Background" Value="Transparent" />
+                                <Setter Property="BorderBrush" Value="Transparent" />
+                            </Trigger>
+                            <Trigger Property="IsMouseOver" Value="True">
+                                <Setter Property="Background" Value="Transparent" />
+                                <Setter Property="BorderBrush" Value="Transparent" />
+                            </Trigger>
+                        </Style.Triggers>
+                    </Style>
+                </ListView.ItemContainerStyle>
+            </ListView>
+        </Grid>
+    </Grid>
 </Page>

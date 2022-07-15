@@ -1,4 +1,5 @@
-﻿using System.Windows.Controls;
+﻿using System.Windows;
+using System.Windows.Controls;
 
 namespace XP.Desafio.Features.Historico
 {
@@ -11,6 +12,13 @@ namespace XP.Desafio.Features.Historico
         {
             InitializeComponent();
             DataContext = new HistoricoViewModel();
+        }
+
+        private void ToggleButton_Click(object sender, System.Windows.RoutedEventArgs e)
+        {
+            var isVisible = listOrdernsAberto.Visibility == Visibility.Visible;
+            listOrdernsAberto.Visibility = isVisible ? Visibility.Hidden : Visibility.Visible;
+            textBlockOrdemAbertoToggleIcon.Text = isVisible ? "" : "";
         }
     }
 }
