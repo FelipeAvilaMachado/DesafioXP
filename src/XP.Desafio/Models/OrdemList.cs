@@ -5,7 +5,7 @@ using XP.Desafio.Services.Models;
 
 namespace XP.Desafio.Models
 {
-    public class OrdemList
+    public record OrdemList
     {
         public int Id { get; set; }
         public DateTime DateTime { get; set; } = DateTime.UtcNow;
