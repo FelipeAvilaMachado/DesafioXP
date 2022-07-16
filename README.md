@@ -23,10 +23,10 @@ O servico real deveria buscar informacoes da bolsa, mas nao foi implementado, ap
 
 Fiz um snapshot do uso de memoria e do CPU, com a intencao de encontrar os pontos de possiveis gargalos, seja por processamento, ou leak de memoria.
 
-![CPU Profile](https://github.com/FelipeAvilaMachado/DesafioXP/DesafioXP_CPU_Usage.png?raw=true)
+![CPU Profile](DesafioXP_CPU_Usage.png)
 Conforme as imagens, o uso de CPU se manteve baixo, sem picos de processamento, e a maior parte do processamento foi devido a renderizacao da tela.
 
-![Memory Snapshot](https://github.com/FelipeAvilaMachado/DesafioXP/DesafioXP_Memory_Usage.png?raw=true)
+![Memory Snapshot](DesafioXP_Memory_Usage.png)
 No lado da memoria, a utilizacao se manteve constante, mesmo com a atualizacao dos itens realizadas constantemente, indicando que nao houve leak de memoria.
 
 ## Observações
