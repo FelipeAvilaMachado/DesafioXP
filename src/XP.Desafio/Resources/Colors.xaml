@@ -6,7 +6,8 @@
     <SolidColorBrush x:Key="SCBXPPrimary">#1b212d</SolidColorBrush>
     <SolidColorBrush x:Key="SCBXPSecondary">#2b3240</SolidColorBrush>
     <SolidColorBrush x:Key="SCBXPWhite">#d7dde6</SolidColorBrush>
-    <SolidColorBrush x:Key="SCBXPLightGrey">#7c8494</SolidColorBrush>
+    <SolidColorBrush x:Key="SCBXPGrey">#666d7b</SolidColorBrush>
+    <SolidColorBrush x:Key="SCBXPLightGrey">#98a2af</SolidColorBrush>
     <SolidColorBrush x:Key="SCBXPYellow">#FFF80A</SolidColorBrush>
     <SolidColorBrush x:Key="SCBXPRed">#EB1D36</SolidColorBrush>
     <SolidColorBrush x:Key="SCBXPBlue">#3AB4F2</SolidColorBrush>
@@ -16,7 +17,8 @@
     <Color x:Key="CXPPrimary">#1b212d</Color>
     <Color x:Key="CXPSecondary">#2b3240</Color>
     <Color x:Key="CXPWhite">#d7dde6</Color>
-    <Color x:Key="CXPLightGrey">#7c8494</Color>
+    <Color x:Key="CXPGrey">#666d7b</Color>
+    <Color x:Key="CXPLightGrey">#98a2af</Color>
     <Color x:Key="CXPYellow">#FFF80A</Color>
     <Color x:Key="CXPRed">#EB1D36</Color>
     <Color x:Key="CXPBlue">#3AB4F2</Color>

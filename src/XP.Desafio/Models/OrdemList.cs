@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Windows;
 using System.Windows.Media;
+using XP.Desafio.Services.Models;
 
 namespace XP.Desafio.Models
 {
@@ -22,6 +23,8 @@ namespace XP.Desafio.Models
         public double? Objetivo { get; set; }
         public double? ObjetivoDisponivel { get; set; }
         public double? Reducao { get; set; }
+
+        //Temporario ate implementar um ColorConverter
         public SolidColorBrush TextColor => 
             Reducao > 0
             ? (SolidColorBrush)Application.Current.Resources["SCBXPRed"]
@@ -29,29 +32,24 @@ namespace XP.Desafio.Models
                 ? (SolidColorBrush)Application.Current.Resources["SCBXPYellow"]
                 : (SolidColorBrush)Application.Current.Resources["SCBXPBlue"];
 
-        public OrdemList(double reducao)
+        public OrdemList(Ordem ordem)
         {
-            Reducao = reducao;
-        }
-
-        public OrdemList(int id, DateTime dateTime, string assessorName, int conta, string ativo, string tipo, int? quantidade, int? quantidadeAparente, int? quantidadeDisponivel, int? quantidadeCancel, int? quantidadeExec, double? valor, double? valorDisponivel, double? objetivo, double? objetivoDisponivel, double? reducao)
-        {
-            Id = id;
-            DateTime = dateTime;
-            AssessorName = assessorName;
-            Conta = conta;
-            Ativo = ativo;
-            Tipo = tipo;
-            Quantidade = quantidade;
-            QuantidadeAparente = quantidadeAparente;
-            QuantidadeDisponivel = quantidadeDisponivel;
-            QuantidadeCancel = quantidadeCancel;
-            QuantidadeExec = quantidadeExec;
-            Valor = valor;
-            ValorDisponivel = valorDisponivel;
-            Objetivo = objetivo;
-            ObjetivoDisponivel = objetivoDisponivel;
-            Reducao = reducao;
+            Id = ordem.Id;
+            DateTime = ordem.DateTime;
+            AssessorName = ordem.AssessorName;
+            Conta = ordem.Conta;
+            Ativo = ordem.Ativo;
+            Tipo = ordem.Tipo;
+            Quantidade = ordem.Quantidade;
+            QuantidadeAparente = ordem.QuantidadeAparente;
+            QuantidadeDisponivel = ordem.QuantidadeDisponivel;
+            QuantidadeCancel = ordem.QuantidadeCancel;
+            QuantidadeExec = ordem.QuantidadeExec;
+            Valor = ordem.Valor;
+            ValorDisponivel = ordem.ValorDisponivel;
+            Objetivo = ordem.Objetivo;
+            ObjetivoDisponivel = ordem.ObjetivoDisponivel;
+            Reducao = ordem.Reducao;
         }
     }
 }

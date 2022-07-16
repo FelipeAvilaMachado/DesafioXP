@@ -5,7 +5,9 @@ VisualStudioVersion = 17.2.32616.157
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "XP.Desafio", "XP.Desafio\XP.Desafio.csproj", "{85038CE6-FE17-49C7-AD47-CE5CC26F2608}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "XP.Desafio.Services", "XP.Desafio.Services\XP.Desafio.Services.csproj", "{160DA760-CEC2-4FAC-A1AF-FCAEECD8E9FE}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "XP.Desafio.Services", "XP.Desafio.Services\XP.Desafio.Services.csproj", "{160DA760-CEC2-4FAC-A1AF-FCAEECD8E9FE}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "XP.Desafio.Tests", "XP.Desafio.Tests\XP.Desafio.Tests.csproj", "{E8926AE8-A463-459F-BB59-2D4C6C203A13}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -21,6 +23,10 @@ Global
 		{160DA760-CEC2-4FAC-A1AF-FCAEECD8E9FE}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{160DA760-CEC2-4FAC-A1AF-FCAEECD8E9FE}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{160DA760-CEC2-4FAC-A1AF-FCAEECD8E9FE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E8926AE8-A463-459F-BB59-2D4C6C203A13}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E8926AE8-A463-459F-BB59-2D4C6C203A13}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E8926AE8-A463-459F-BB59-2D4C6C203A13}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E8926AE8-A463-459F-BB59-2D4C6C203A13}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

@@ -18,5 +18,13 @@
         public double? Objetivo { get; set; }
         public double? ObjetivoDisponivel { get; set; }
         public double? Reducao { get; set; }
+
+        //ctor para testes
+        public Ordem(int id, double reducao, int qtdDisp)
+        {
+            Id = id;
+            Reducao = reducao;
+            QuantidadeDisponivel = qtdDisp;
+        }
     }
 }

@@ -19,7 +19,7 @@
         <!--Page Header-->
         <DockPanel FlowDirection="LeftToRight" Height="40" Background="{StaticResource SCBXPSecondary}" VerticalAlignment="Top">
             <TextBlock Text="Histórico" FontSize="20" Foreground="{StaticResource SCBXPWhite}" VerticalAlignment="Center" Margin="10,5"/>
-            <Button Content="Run Test" Command="{Binding ToggleTestCommand}" Foreground="{StaticResource SCBXPWhite}" Margin="10,5"/>
+            <Button Content="Toggle Update" Command="{Binding ToggleTestCommand}" Foreground="{StaticResource SCBXPWhite}" />
         </DockPanel>
         
         <!--Content-->
@@ -30,19 +30,27 @@
             </Grid.RowDefinitions>
             <!--Grouping-->
             <ToggleButton HorizontalAlignment="Stretch"
-                          HorizontalContentAlignment="Left"
+                          HorizontalContentAlignment="Stretch"
                           VerticalAlignment="Top"
                           Height="40"
                           Click="ToggleButton_Click"
                           Foreground="{StaticResource SCBXPWhite}"
                           Background="{StaticResource SCBXPSecondary}">
                 <DockPanel>
-                    <TextBlock x:Name="textBlockOrdemAbertoToggleIcon" FontFamily="{StaticResource FontAwesomeSolid}" Text="&#xf106;" VerticalAlignment="Center"/>
-                    <TextBlock Text="ORDENS EM ABERTO" FontSize="20" Foreground="{StaticResource SCBXPWhite}" VerticalAlignment="Center" Margin="10,5"/>
+                    <TextBlock FontSize="20" Foreground="{StaticResource SCBXPLightGrey}" VerticalAlignment="Center">
+                        <Run x:Name="textBlockOrdemAbertoToggleIcon" FontFamily="{StaticResource FontAwesomeSolid}" Text="&#xf106;"/>
+                        <Run Text="ORDENS EM ABERTO"/>
+                    </TextBlock>
+                    <TextBlock FontSize="16" FontWeight="Bold" Foreground="{StaticResource SCBXPGrey}" VerticalAlignment="Center" HorizontalAlignment="Right" Margin="10,5">
+                        <Run Text="TOTAL QUANTIDADE: "/>
+                        <Run Text="{Binding TotalQtd, Mode=OneWay}"/>
+                        <Run Text=" TOTAL DISPONÍVEL: "/>
+                        <Run Text="{Binding TotalQtdDisponivel, Mode=OneWay}"/>
+                    </TextBlock>
                 </DockPanel>
             </ToggleButton>
             <!--List-->
-            <ListView x:Name="listOrdernsAberto" Grid.Row="1" ItemsSource="{Binding Ordems}" >
+            <ListView x:Name="listOrdernsAberto" Grid.Row="1" ItemsSource="{Binding ItemsSource, Mode=OneWay}" >
                 <ListView.View>
                     <GridView AllowsColumnReorder="False" >
                         <GridViewColumn Header="DATA E HORA" Width="160" DisplayMemberBinding="{Binding DateTime, StringFormat='dd/MM/yyyy HH:mm:ss'}" />
